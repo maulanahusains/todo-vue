@@ -63,6 +63,7 @@
             <form @submit.prevent="updateTodo(list)" class="input">
               <input type="text" v-model="ubahTodo">
               <button>Save</button>
+              <button @click="list.edit = !list.edit">Cancel</button>
             </form>
           </div>
         </li>
