@@ -47,7 +47,7 @@
     <div>
       <form class="input" @submit.prevent="addTodo">
         <input type="text" v-model="newTodo">
-        <button @click="addTodo">Add</button>
+        <button>Add</button>
       </form>
     </div>
     <div class="lists">
