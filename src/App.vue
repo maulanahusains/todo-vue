@@ -55,15 +55,17 @@
         <li v-for="list of data" :key="list.id">
           <input v-if="!list.edit" type="checkbox" v-model="list.checked">
           <span v-if="!list.edit" :class="{ done:list.checked }">{{ list.todo }}</span>
-          <div v-if="!list.edit">
+          <div v-if="!list.edit" style="display: flex; gap: 4px;">
             <button @click="editTodo(list)">E</button>
             <button @click="removeTodo(list)">X</button>
           </div>
           <div v-else>
             <form @submit.prevent="updateTodo(list)" class="input">
               <input type="text" v-model="ubahTodo">
-              <button>Save</button>
-              <button @click="list.edit = !list.edit">Cancel</button>
+              <div style="display: flex; gap: 4px;">
+                <button>Save</button>
+                <button @click="list.edit = !list.edit">Cancel</button>
+              </div>
             </form>
           </div>
         </li>
@@ -79,7 +81,7 @@
   }
   .input {
     display: flex;
-    gap: 16px;
+    gap: 12px;
     justify-content: center;
     align-items: center;
   }
